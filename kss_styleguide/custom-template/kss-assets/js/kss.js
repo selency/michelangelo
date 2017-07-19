@@ -107,24 +107,158 @@
 
     if (parameters) {
       $('.kss-parameters__item').each(function (index) {
-        var description = $(this).find('.kss-parameters__description').text().trim().replace(/; +/g, ';');
-        var colorName = description.split(';')[1] ? description.split(';')[1] : '';
+        var description = $(this).find('.kss-parameters__description').text().trim().replace(/, /g, ',');
+        var colorName = description.split(',')[1] ? description.split(',')[1] : '';
         var colorVar = $(this).find('.kss-parameters__name').text().trim();
-        var colorCode = description.split(';')[0];
-        var isHexadecimal  = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(colorCode);
-        var isRGB  = /(rgba?\((?:\d{1,3}(, +|,|\))){3}(?:\d+\.\d+\))?)/i.test(colorCode);
+        var color = description.split(',')[0];
+        var isColor  = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(color);
         var colorContent = '<span class="kss-color__name">' + colorName + '</span>' +
                            '<span class="kss-color__var">' + colorVar + '</span>' +
-                           '<span class="kss-color__code">' + colorCode + '</span>';
+                           '<span class="kss-color__code">' + color + '</span>';
 
-        if (isHexadecimal || isRGB) {
+        if (isColor) {
           $(this).parent().addClass('kss-colors-container');
-          $(this).addClass('kss-color').css('background', colorCode);
+          $(this).addClass('kss-color').css('background', color);
           $(this).find('.kss-parameters__description').html(colorContent);
         }
       });
     }
   })();
 
-
 })();
+
+(function ($) {
+  'use strict';
+
+  $(function() {
+    selectDropdown.init();
+  });
+
+  var selectDropdown = {
+
+      init: function(){
+          selectDropdown.generate($('.white--combo .dropdown select'), 'whitecombo');
+          selectDropdown.generate($('.black--combo .dropdown select'), 'blackcombo');
+
+          $(document).on('click', '.select-style', function(event) {
+              event.stopPropagation();
+
+              $(this).find('ul.sub-dropdown').addClass('show');
+          });
+
+          $(document).on('click', '.select-style .sub-dropdown li', function(event) {
+              event.stopPropagation();
+
+              selectDropdown.clickChild($(this));
+          });
+
+          $(document).on('keydown', '.select-style', function (event) {
+              event = event || window.event;
+              selectDropdown.keyboardNaviguate(event, $(this));
+          });
+
+          $(document).on('click', function () {
+              $('.select-style').find('ul.sub-dropdown').removeClass('show');
+          });
+
+          $(document).on('click', '.select-style', function () {
+              $('.select-style').not($(this)).find('ul.sub-dropdown').removeClass('show');
+          });
+      },
+
+      generate: function(elem, id){
+          var elemToGenerate;
+
+          if(elem === undefined){
+              elemToGenerate = $('select');
+          } else {
+              elemToGenerate = elem;
+          }
+
+          elemToGenerate.not('.generate-on').each(function(){
+
+              $(this).addClass('generate-on');
+
+              var selectID    =   id;
+              var selectedText = $(this).find(':selected').text();
+
+              $(this)
+                  .after('<ul class="select-style" tabindex="0" id="b_'+selectID+'" /></ul>')
+                  .children('option').each(function(i) {
+                      var listId = $('ul#b_'+selectID);
+
+                      if (i === 0) {
+                          listId.append('<li class="default-value">'+selectedText+'</li>');
+                          listId.append('<ul class="sub-dropdown"></ul>');
+                      }
+
+                      if ($(this).val() != 'select') {
+                          listId.find('.sub-dropdown').append('<li data-val="'+$(this).val()+'">'+$(this).text()+'</li>');
+                      }
+
+                  })
+                  .end()
+                  .addClass('hide');
+          });
+      },
+
+      keyboardNaviguate: function(event, elem){
+
+          var liActive = elem.find('ul li.focus');
+
+          if (event.keyCode === 13 || event.keyCode === 38 || event.keyCode === 40) {
+              event.preventDefault();
+          }
+
+          if(event.keyCode === 13){
+              if(!elem.hasClass('show')){
+                  elem.click();
+                  elem.find('ul li').removeClass('focus');
+                  elem.find('ul li:first-of-type').addClass('focus');
+              } else {
+                  elem.find('ul li.focus').click();
+              }
+          } else if (event.keyCode === 40){
+              if(!elem.hasClass('show')){
+                  elem.click();
+                  elem.find('ul li').removeClass('focus');
+                  elem.find('ul li:first-of-type').addClass('focus');
+              } else {
+                  var nextLi = elem.find('ul li.focus').next('li');
+
+                  if(!nextLi.length){
+                      return false;
+                  }
+
+                  elem.find('ul li.focus').next('li').addClass('focus');
+                  liActive.removeClass('focus');
+              }
+
+          } else if (event.keyCode === 38){
+
+              var prevLi = elem.find('ul li.focus').prev('li');
+
+              if(!prevLi.length){
+                  return false;
+              }
+
+              elem.find('ul li.focus').prev('li').addClass('focus');
+              liActive.removeClass('focus');
+
+          }
+      },
+
+      clickChild:function(elem){
+
+          var parentDropdown = elem.parents('.select-style');
+          var optionValue = elem.data('val');
+
+          parentDropdown.find('.default-value').text(elem.text());
+          elem.parents('.dropdown').find('select option[value="'+optionValue+'"]').prop('selected', true).change();
+
+          elem.parent('.sub-dropdown').removeClass('show');
+
+      }
+  };
+
+}(jQuery));
