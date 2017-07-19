@@ -66,10 +66,12 @@
 
     <!-- documentation. -->
     <section class="kss-documentation">
-      {{#if homepage}}
-        <article class="kss-markdown">
-          {{{homepage}}}
-        </article>
+      {{#if template.isHomepage}}
+        {{#if homepage}}
+          <div class="kss-markdown">
+            {{{homepage}}}
+          </div>
+        {{/if}}
       {{else}}
 
         <!--
@@ -86,7 +88,7 @@
 
             <article class="kss-section__content">
               {{#if source.filename}}
-                <p class="kss-section__source">Source: <span>{{source.filename}}</span>, line <span>{{source.line}}</span></p>
+                  <p class="kss-section__source">Source: <code>{{source.filename}}</code>, line <span>{{source.line}}</span></p>
               {{/if}}
 
               <a class="kss-section__permalink" href="#kssref-{{referenceURI}}">
@@ -120,16 +122,16 @@
 
             {{#if example}}
               <article class="kss-section__modifiers">
-                <h1 class="kss-modifiers__heading">Example{{#if modifiers}}s{{/if}}</h1>
+                <div class="kss-modifiers__heading">Example{{#if modifiers}}s{{/if}}</div>
 
-                {{#if modifiers}}
-                  <h2 class="kss-modifiers__name">Default styling</h2>
+                <!--{{#if modifiers}}
+                  <div class="kss-modifiers__name">Default styling</div>
                 {{/if}}
 
-                <div class="kss-modifiers__example">{{{markup}}}</div>
+                <div class="kss-modifiers__example">{{{markup}}}</div>-->
 
                 {{#each modifiers}}
-                  <h2 class="kss-modifiers__name">{{name}}</h2>
+                  <div class="kss-modifiers__name">{{name}}</div>
 
                   <p class="kss-modifiers__description">{{{description}}}</p>
 

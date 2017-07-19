@@ -5,13 +5,11 @@
 
 .kss-title {
   margin: 0;
-  color: #E87E04;
+  color: #000000;
   text-align: center;
   font-size: 1.5rem;
   font-family: 'Lato', sans-serif;
-  font-weight: 700;
-  text-transform: none;
-  letter-spacing: normal; }
+  font-weight: 700; }
 
 .kss-header {
   z-index: 900;
@@ -23,7 +21,7 @@
   width: 100%;
   min-height: 50px;
   padding: 10px;
-  color: #E87E04;
+  color: #000000;
   background: #FFFFFF;
   font-family: 'Lato', sans-serif;
   font-weight: 400; }
@@ -57,8 +55,8 @@
   margin-top: 13px;
   margin-bottom: 13px;
   border-radius: 5px;
-  color: #E87E04;
-  background: #E87E04;
+  color: #000000;
+  background: #000000;
   -webkit-perspective: 1000;
   -webkit-backface-visibility: hidden;
   -webkit-transform: translate3d(0, 0, 0);
@@ -69,7 +67,7 @@
     position: absolute;
     width: 30px;
     height: 4px;
-    background: #E87E04;
+    background: #000000;
     transition: all 0.5s; }
   .kss-header__hamburger:before {
     top: -8px;
@@ -102,7 +100,10 @@
   font-family: 'Lato', sans-serif;
   font-weight: 400;
   transform: translateX(-100%);
-  transition: transform 0.3s ease-out; }
+  transition: transform 0.3s ease-out;
+  background-image: url("http://www.designbolts.com/wp-content/uploads/2013/02/Golf-Shirt-Grey-Seamless-Pattern-For-Website-Background.jpg");
+  background-size: cover;
+  background-repeat: repeat; }
   @media only screen and (min-width: 48.0625em) {
     .kss-navigation {
       width: 35%; } }
@@ -122,7 +123,8 @@
 .kss-navigation__title {
   display: none;
   box-sizing: border-box;
-  padding: 20px 10px; }
+  padding: 20px 10px;
+  line-height: 24px; }
   @media only screen and (min-width: 64.0625em) {
     .kss-navigation__title {
       display: block; } }
@@ -147,19 +149,16 @@
   box-sizing: border-box;
   padding: 5px 20px;
   color: #222222;
-  font-family: 'Lato', sans-serif;
   font-size: 1rem;
   font-weight: 400;
   text-decoration: none;
-  text-transform: none;
-  letter-spacing: normal;
   transition: color 0.3s; }
   .kss-nav__item a:hover {
-    color: #E87E04; }
+    color: #000000; }
   .kss-nav__item a:hover .kss-nav__name {
     transform: translateX(6px); }
   .kss-nav__item a.kss-state-active {
-    color: #E87E04; }
+    color: #000000; }
   .kss-nav__item a.kss-state-active:hover .kss-nav__name {
     transform: none; }
 
@@ -221,7 +220,7 @@
     outline: 0; }
   .kss-markdown h1,
   .kss-markdown h2 {
-    color: #E87E04;
+    color: #000000;
     font-weight: 700; }
   .kss-markdown h2 {
     margin-top: 3rem; }
@@ -230,7 +229,7 @@
   .kss-markdown h5,
   .kss-markdown h6 {
     margin-top: 1.5rem;
-    color: #E87E04;
+    color: #000000;
     font-weight: 700; }
   .kss-markdown h1 {
     font-size: 2rem; }
@@ -289,6 +288,20 @@
     padding: 2px 5px;
     background: #F5F5F5; }
 
+@font-face {
+  font-family: "CaslonGraphiqueEF";
+  src: url("/front-v2/kss_styleguide/fonts/CaslonGraphiqueEF.eot");
+  src: url("/front-v2/kss_styleguide/fonts/CaslonGraphiqueEF.eot?#iefix") format("embedded-opentype"), url("/front-v2/kss_styleguide/fonts/CaslonGraphiqueEF.woff") format("woff"), url("/front-v2/kss_styleguide/fonts/CaslonGraphiqueEF.ttf") format("truetype"), url("/front-v2/kss_styleguide/fonts/CaslonGraphiqueEF.svg#CaslonGraphiqueE") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-FB02; }
+@font-face {
+  font-family: "Graphik-Regular";
+  src: url("/front-v2/kss_styleguide/fonts/Graphik-Regular.otf") format("opentype"); }
+@font-face {
+  font-family: "Graphik-Medium";
+  src: url("/front-v2/kss_styleguide/fonts/Graphik-Medium.otf") format("opentype"); }
 .kss-documentation {
   z-index: 100;
   position: relative;
@@ -318,7 +331,8 @@
 
 .kss-section__content {
   border: 1px solid #CCCCCC;
-  padding: 1em; }
+  padding: 1em;
+  background-color: #FDFDFD; }
   .kss-section__content ol,
   .kss-section__content ul,
   .kss-section__content p,
@@ -333,12 +347,10 @@
 .kss-section__item {
   margin: 0;
   margin-bottom: 5px;
-  color: #E87E04;
+  color: #000000;
   font-size: 2rem;
   font-family: 'Lato', sans-serif;
-  font-weight: 400;
-  text-transform: none;
-  letter-spacing: normal; }
+  font-weight: 400; }
   .kss-section__item--depth-2 {
     font-size: 1.875rem; }
   .kss-section__item--depth-3 {
@@ -422,8 +434,7 @@
   border: 1px solid #CCCCCC;
   border-top: none;
   border-bottom: none;
-  padding: 1em;
-  background: #FDFDFD; }
+  padding: 1em; }
 
 .kss-modifiers__heading {
   margin: 0;
@@ -431,14 +442,14 @@
   font-family: 'Lato', sans-serif;
   font-size: 1.125rem;
   font-weight: 700;
-  color: #E87E04; }
+  color: #000000; }
 
 .kss-modifiers__name {
   margin: 0;
   margin-bottom: 5px;
   font-size: 1rem;
   font-weight: 400;
-  color: #E87E04; }
+  color: #07a; }
 
 .kss-modifiers__description {
   margin: 0; }
@@ -446,13 +457,24 @@
 .kss-modifiers__example {
   position: relative;
   min-height: 50px;
-  margin-bottom: 20px; }
+  margin: 20px 0;
+  -moz-box-shadow: inset 1px 1px 10px 0px #d9d9d9;
+  -webkit-box-shadow: inset 1px 1px 10px 0px #d9d9d9;
+  -o-box-shadow: inset 1px 1px 10px 0px #d9d9d9;
+  box-shadow: inset 1px 1px 10px 0px #d9d9d9;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color=$inner-shadow-color, Direction=134, Strength=20);
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  padding: 20px; }
   .kss-modifiers__example:after {
     content: '';
     display: table;
     clear: both; }
   .kss-modifiers__example:last-child {
     margin-bottom: 0; }
+  .kss-modifiers__example i {
+    font-size: 22px; }
 
 .kss-section__markup pre[class*=language-] {
   margin: 0; }
