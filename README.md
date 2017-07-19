@@ -98,10 +98,10 @@ In the example below you can see we have a heading, a description, and we list o
 //
 // The primary colors for branding.
 //
-// $leonardo      -  #2980b9; Leader blue
-// $donatello     -  #8e44ad; Purple tech
-// $raphael       -  #c0392b; Sai
-// $michelangelo  -  rgb(232, 126, 4); Cowabunga
+// $leonardo      -  #2980b9, Leader blue
+// $donatello     -  #8e44ad, Purple tech
+// $raphael       -  #c0392b, Sai
+// $michelangelo  -  #E87E04, Cowabunga
 // $splinter      -  #FDE3A7
 //
 // Styleguide Settings.Colors
@@ -124,4 +124,4 @@ The example src directory is a boilerplate for [ITCSS methodology](https://youtu
 ## Customize
 Inside the node package directory, go to `kss_styleguide/custom-template/kss-assets/css/` to change the styling of this theme. Run `sass --watch --sourcemap=none kss.scss:kss.css` to watch for changes and compile the scss files.
 
-You can quickly change the primary color by changing the value of the variable `$cowabunga` in `kss-settings.scss`.
+You can quickly change the primary color by changing the value of the variable `$cowabunga` in `_settings.scss`.

@@ -1,15 +1,69 @@
 {
-  "name": "michelangelo",
-  "version": "0.6.1",
+  "_args": [
+    [
+      {
+        "raw": "michelangelo",
+        "scope": null,
+        "escapedName": "michelangelo",
+        "name": "michelangelo",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/alvarolavinamoros/www/front-v2"
+    ]
+  ],
+  "_from": "michelangelo@latest",
+  "_id": "michelangelo@0.5.1",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/michelangelo",
+  "_nodeVersion": "4.4.4",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/michelangelo-0.5.1.tgz_1475592896751_0.7932140466291457"
+  },
+  "_npmUser": {
+    "name": "jordypouw",
+    "email": "jordypouw@gmail.com"
+  },
+  "_npmVersion": "2.15.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "michelangelo",
+    "scope": null,
+    "escapedName": "michelangelo",
+    "name": "michelangelo",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/michelangelo/-/michelangelo-0.5.1.tgz",
+  "_shasum": "61aadd4faee829fb5f4e6f66e82ccc9ca4469ed3",
+  "_shrinkwrap": null,
+  "_spec": "michelangelo",
+  "_where": "/Users/alvarolavinamoros/www/front-v2",
+  "bugs": {
+    "url": "https://github.com/stamkracht/michelangelo/issues"
+  },
+  "dependencies": {},
   "description": "This is a custom template for the kss-node living style guide.",
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-load-plugins": "^1.5.0",
-    "gulp-shell": "^0.6.3",
-    "kss": "^3.0.0-beta.18"
+    "gulp": "~3.9.1",
+    "gulp-load-plugins": "~1.2.2",
+    "gulp-shell": "~0.5.2",
+    "kss": "^3.0.0-beta.12"
   },
-  "repository": "https://github.com/stamkracht/michelangelo.git",
-  "license": "MIT",
+  "directories": {},
+  "dist": {
+    "shasum": "61aadd4faee829fb5f4e6f66e82ccc9ca4469ed3",
+    "tarball": "https://registry.npmjs.org/michelangelo/-/michelangelo-0.5.1.tgz"
+  },
+  "gitHead": "8c65d3d78257959c8e40967a3c92c981209aa9e9",
   "homepage": "https://github.com/stamkracht/michelangelo",
   "keywords": [
     "kss",
@@ -19,5 +73,21 @@
     "scss",
     "template",
     "theme"
-  ]
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "jordypouw",
+      "email": "jordypouw@gmail.com"
+    }
+  ],
+  "name": "michelangelo",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stamkracht/michelangelo.git"
+  },
+  "scripts": {},
+  "version": "0.5.1"
 }
